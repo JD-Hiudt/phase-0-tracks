@@ -1,6 +1,6 @@
 # Git Definitions
 
-**Instructions: ** Define each of the following Git concepts.
+**Define each of the following Git concepts.** 
 
 * What is version control?  Why is it useful?
     - Version control keeps software systems consisting of many different versions and files clean and well organized.  It's useful because it allows developers to view the entire history of revision made to a project/file, and merge appropriate changes made by different programmers.
@@ -9,4 +9,6 @@
 * What is a commit? What makes a good commit message?
     - A commit is used to create a save point for changes that have been made to a file to the git repository.  A good commit message should be included, clearing stating what's been changed since the last commit. 
 * What is a merge conflict?
-    - a merge conflict happens when the computer is unsure which line of code to use, when those pieces of code are similar and exist on a similar line in the text editor.  When a merge conflict happens, you'll want to open the file in your text editor which will show both pieces of code intending to be merges, with some additional notations.  Simply format the code to read how you'd like the merged code to look, save, and commit the file with a message
+    - a merge conflict happens when the computer is unsure which line of code to use, when those pieces of code are similar and exist on a similar line in the text editor.  When a merge conflict happens, you'll want to open the file in your text editor which will show both pieces of code intending to be merges, with some additional notations.  Simply format the code to read how you'd like the merged code to look, save, and commit the file with a message.
+
+

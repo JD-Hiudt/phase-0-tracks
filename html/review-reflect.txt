@@ -1,0 +1,32 @@
+Briefly describe your understanding of what the browser does, including definitions of the following:
+
+A web browser is a type of software people use to access web pages.  For a user to view a web page, they type the web address into the browser. 
+
+    client - the device a person is using to access websites (computer, laptop, cell phone, tablet, etc)
+
+    server - a computer that is continuously connected to the internet which hosts the website. The user is essentially using their device to ask the browser for a web page - that request is set across the Internet and returns the request to the client
+
+    render - using computer programs to generate an image
+What is HTML? In your answer, include definitions of the following:
+
+HTML (Hypertext Markup Language) is one of the languages a browser speaks, and tells the web browser how to display the text, images, and other content of a web page
+    tag - to display text, images, and other content on a web page you must put that information between opening and closing tags - the symbol between the tag tells the tags purpose
+    element - "tags" and "elements" are sometimes used interchangeably.  However, the element is the content the exists between opening and closing tags (and the tags themselves) - the information between opening and closing tags gives that content special meaning
+    node - everything within an HTML document is a node - from the complete document itself, the elements, the text, the attributes, and comments
+    attribute - attributes are created within the opening tag and consist of a 'name' and a 'value' - most attribute values are predetermined and provide extra information and settings for the element
+    block element - block level elements have a page break built in before and after the element
+    inline element - only takes up the space on the page that is between the element tags
+Very briefly, explain the purpose of the following elements:
+    head - area where you can define the title of the html page. does not appear in web page itself
+    body - area that contains at documentation for HTML web page
+    p- paragraph, holds descriptive text
+    form - creates a form for users input value of different types
+    div - divides content into sections
+    span - used in tables for content to span a number of columns or rows
+    select - used in forms to create drop down menu of options
+    h2 - creates a heading and can range in sizes
+    ol - lists that will be numbered
+    ul - lists that will be bulleted
+    table - created a table
+    tr - defines what will be placed in a row
+    td - defines what will be place in each column of a row

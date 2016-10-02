@@ -1,3 +1,25 @@
+body {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section#external-links {
+  width: 30%;
+  min-width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 3.5px;
+}
+
+main {
+  width: 65%;
+  min-width: 60%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 3.5px;
+  text-align: center;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -30,3 +52,17 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+/*@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}*/
+
+@media screen and (max-width: 500px) {
+  section, main {
+    font-size: 50%;
+    display: block;
+  }
+}
+

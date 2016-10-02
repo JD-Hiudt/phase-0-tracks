@@ -1,0 +1,29 @@
+section#contact-info p {
+  font-size: .8em;
+}
+
+section.job {
+  background-color: #e9e5dc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+ul.job-tasks {
+  font-size: .8em;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+a:active {
+  color: red;
+}
+
+body>section:last-of-type {
+  border-top: 1px dashed #e9e5dc;
+  margin-top: 30px;
+}
+
+

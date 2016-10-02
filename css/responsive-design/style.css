@@ -1,9 +1,10 @@
 body {
   max-width: 960px;
+  margin: 0 auto;
 }
 
 section#external-links {
-  width: 25%;
+  width: 30%;
   min-width: 25%;
   display: inline-block;
   vertical-align: top;
@@ -11,11 +12,12 @@ section#external-links {
 }
 
 main {
-  width: 70%;
-  min-width: 70%;
+  width: 65%;
+  min-width: 60%;
   display: inline-block;
   vertical-align: top;
   padding: 3.5px;
+  text-align: center;
 }
 
 blockquote {
@@ -51,8 +53,16 @@ figcaption {
   text-align: right;
 }
 
-@media screen and (max-width: 500px) {
+/*@media screen and (max-width: 500px) {
   body {
     background-color: hotpink;
   }
+}*/
+
+@media screen and (max-width: 500px) {
+  section, main {
+    font-size: 50%;
+    display: block;
+  }
 }
+

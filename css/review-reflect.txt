@@ -15,4 +15,7 @@ To understand how CSS works, you want to imagine that there is an invisible box 
 Explain and give an example of the cascading effect of CSS.
 the cascading effect means that id the are two or more rules for the same element, one with take priority over the other(s).  
 - if one selector is more specific than the other, than the more specific one with take effect ex. h1 p is more specfic than h1 - a rule for h1 p would take precedent
+
 Name two CSS techniques that assist in responsive design.
+-media queries 
+-fluid dimensions 

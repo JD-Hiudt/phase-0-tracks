@@ -1,0 +1,18 @@
+Name at least three categories of CSS adjustments (example: colors)?
+-color, font-family, border
+
+What are the three ways to link a CSS rule to an HTML document? Which one is the best and why?
+1. Inline - add a "style" attribute the opening tag of each element you wish to style
+2. Internal - add a <style></style> tag within the <head> of the HTML file
+3. External - <link> the external css file within the <head></head> section of the HTML file.  Best because can link multiple css files (each can have unique styles)
+
+What is a selector? Give examples of at least three types of selectors.
+selectors tell the file which element the css rule applies to: Type Selector - targets an element name like p, h1, nav, Class Selector - targets an element in which you gave a special "class="..."" too ex. .wrapper { }, ID Selector - targets the element who has the unique id="..." attribute too (an ID can be only applied to one element type)
+
+What is the box model?
+To understand how CSS works, you want to imagine that there is an invisible box around every HTML element.  With CSS you create rules to content the different "boxes"
+
+Explain and give an example of the cascading effect of CSS.
+the cascading effect means that id the are two or more rules for the same element, one with take priority over the other(s).  
+- if one selector is more specific than the other, than the more specific one with take effect ex. h1 p is more specfic than h1 - a rule for h1 p would take precedent
+Name two CSS techniques that assist in responsive design.

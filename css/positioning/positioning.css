@@ -1,0 +1,23 @@
+div.octopus-wrapper {
+  position: relative;
+  margin: 100px auto;
+  width: 40%;
+}
+
+div#hat {
+  position: absolute;
+  z-index: 1;
+}
+
+div#octopus {
+  position: absolute;
+  top: 75px;
+  left: 20px;
+}
+
+div#glasses {
+  position: absolute;
+  top: 173px;
+  left: 63px;
+  z-index: 2;
+}

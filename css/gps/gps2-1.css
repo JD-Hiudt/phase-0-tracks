@@ -1,0 +1,54 @@
+body { 
+font-family: "Trebuchet MS", Helvetica, sans-serif }
+
+header {
+  position: relative;
+  text-align: center;
+  background-image: url("download.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+header p {
+  text-align: left;
+  padding-right: 40%;
+  padding-left: 20px;
+}
+
+.column-1 {
+  background-color: yellow;  
+}
+
+.column-2 {
+  background-color: green;
+}
+
+.column-1, .column-2 {
+  float: left;
+  width: 49%;
+  margin: 1px;
+}
+
+section article {
+  padding: 20px;
+}
+
+h2 {
+  font-size: xx-large;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+ul {
+  list-style: square outside none;
+}
+
+footer {
+  width: 100%;
+  background-color: red;
+  text-align: center;
+  padding:25px;
+  clear: both;
+}
+
+
+

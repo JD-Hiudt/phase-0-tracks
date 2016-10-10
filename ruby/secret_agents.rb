@@ -10,5 +10,21 @@ def encrypt(str)
   p str
 end 
 
-encrypt("abc")
-encrypt("zed")
+encrypt("abc") #should return "bcd"
+encrypt("zed") #should return "afe"
+
+def decrypt(str)
+  index = 0
+  while index > str.length
+  str = str.reverse
+    if str[0..1] == "aa"
+      str[0..1] = str[0...1]
+    end 
+  p str
+  index -= 1
+  end
+  p str
+end 
+
+decrypt("bcd") #should return "abc"
+decrypt("afe") #should return "zed"

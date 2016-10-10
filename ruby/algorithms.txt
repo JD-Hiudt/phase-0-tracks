@@ -1,1 +1,19 @@
+Elevator  
 
+* program software with the amount of floors of specific elevator
+    - each floor indexed [0..21]
+        +  e.g. 22 floors
+* each floor can act as a starting point 
+    - options for direction travel from each starting point
+        + up [0-20]
+        + down [1..21]
+* from given starting point the robot will be given a directive and determine direction of travel
+    - ex. ground floor to floor 5 
+        + select "up" button
+        + wait for elevator to arrive
+        + move forward until enter elevator  
+        + select floor corresponding to directive 
+        + move backwards to exit elevator
+ 
+
+    

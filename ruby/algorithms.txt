@@ -1,3 +1,4 @@
+
 Elevator  
 
 * program software with the amount of floors of specific elevator
@@ -15,5 +16,43 @@ Elevator
         + select floor corresponding to directive 
         + move backwards to exit elevator
  
+
+
+Take Shower
+
+* Enter Shower at Wall D (directly halfway between Wall A & Wall C)
+    - Move forward 50°
+    - Turn left 90° toward Wall A
+* Move forward until reach Wall A
+    - Turn on water feature
+* Turn on water (located center of Wall A)
+    - 2 dials "Hot" "Cold"
+    - Turn dials counter clockwise
+        + 80% Hot 
+        + 20% Cold
+* Move backward from Wall A (approx 30%) in the direction of Wall C
+    - Turn 180° to face Wall C
+* Apply Water
+    - Remain in position for 1 minute
+* Move forward from current position toward Wall C (approx 30%) 
+    - Turn 90° to left (Corner of Wall C and Wall B)
+* Apply Shampoo 
+    - Turn back right 90°
+    - Move backwards 30% (toward Wall A, still facing Wall C)
+    - Apply Water, remain in position for 1 minute
+* Move forward 30% toward Wall C
+    - Turn 90° to right (Corner of Wall C and Wall D)
+* Apply Body Soap 
+    - Turn back left 90°
+    - Move backwards 30% (toward Wall A, still facing Wall C)
+    - Apply Water, remain in position for 1 minute
+* Turn 180° to face Wall A
+* Move forward until Wall A reached
+    - Turn dials "Hot" "Cold" clockwise
+        + 80% Hot 
+        + 20% Cold 
+* Turn 180° to face Wall C, move forward 50%, Turn right 90° to face Wall D, move forward 55% to exit shower
+
+
 
     

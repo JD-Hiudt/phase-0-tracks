@@ -15,13 +15,13 @@ encrypt("zed") #should return "afe"
 
 def decrypt(str)
   index = 0
-  while index > str.length
-  str = str.reverse
-    if str[0..1] == "aa"
-      str[0..1] = str[0...1]
-    end 
-  p str
-  index -= 1
+  key = "abcdefghijklmnopqrstuvwxyz"
+  key = key.reverse
+  while index < str.length
+    if str[0..3] = key[0..25]
+      str[0..3] = key.next
+    end
+    index += 1
   end
   p str
 end 

@@ -13,13 +13,15 @@ end
 encrypt("abc") #should return "bcd"
 encrypt("zed") #should return "afe"
 
+
+
 def decrypt(str)
   index = 0
   key = "abcdefghijklmnopqrstuvwxyz"
-  key = key.reverse
   while index < str.length
-    if str[0..3] = key[0..25]
-      str[0..3] = key.next
+    key = key.reverse!
+    if str[index] = key[index]
+      str[index] = str[index].next
     end
     index += 1
   end

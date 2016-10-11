@@ -54,25 +54,42 @@ p decrypt(encrypt("swordfish"))
 #based on if they select encrypt or decrypt, run appropriate method with the password as the argument
 
 def crypticPassword
-  while true
-    puts "Do you want to encrypt or decrypt a password"
-    choice = gets.chomp.downcase 
-    if (choice == "encrypt" || choice == "decrypt")
-      puts "What is the password?"
-      password = gets.chomp 
-        if choice == "encrypt"
-          return encrypt(password)
-          break
-        else choice == "decrypt"
-          return decrypt(password) 
-        end 
-    else
-      puts "please enter 'encrypt' or 'decrypt'"
-    end
+  puts "Do you want to encrypt or decrypt a password"
+  choice = gets.chomp.downcase 
+  if isValidResponse?(choice)
+    puts "What is the password?"
+    password = gets.chomp 
+    crypticResponse(choice,password)
+  else
+    invalidResponse
+  end
+end
+
+def isValidResponse?(choice)
+  return choice == "encrypt" || choice == "decrypt"
+end
+
+def invalidResponse
+  puts "please enter either 'encrypt' or 'decrypt'"
+  crypticPassword
+end
+
+def crypticResponse(choice,password)
+  if choice == "encrypt"
+    return encrypt(password)
+  else 
+    return decrypt(password) 
   end
 end
 
 p crypticPassword
+
+
+
+
+
+
+
 
 
 

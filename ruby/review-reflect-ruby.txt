@@ -1,45 +1,60 @@
 Variables
 1. What is a variable? Why might a programmer use a variable?
+    variables are used as a a way of assigning value to code.  A variable can hold many different value types, which include numbers, strings, arrays, and hashes.
 
-    
 2. If the value of first_name is "Abraham" and last_name is "Lincoln", explain the order in which Ruby will run the line full_name = first_name + last_name, and what the final result will be.
-    
+    the variable full_name will equal the value of first_name + the value last_name.  Since those values have been assigned, Ruby will run "Abraham" + "Lincoln".  If we were to puts full_name...it would appear "AbrahamLincoln" (with no space) - simple combines the two strings
 
 
 Data Types
 3. For each of the following data types, write a short definition and give at least one example of when you might use the data type in a program. (Don't use an example we've already provided.)
 
-string
-integer
-float
-nil
-boolean
+string - used in the manipulation of text in Ruby. Noted by placing the string between two question marks. Might be used if you want a program to issue a statement to the user.  ex. puts "Hello, #{user_name}"
+integer - an integer is the whole number (1,2,3,...,x) - used for mathematical capabilities in Ruby.  
+float - numbers that include decimal points, used similar to integers
+nil - assigning a variable a value of nothing.  Used similar to is you were to answer N/A on a form.  Sometime there a value of something, sometimes there is not 
+boolean - is a true/false statement. you can use logical statements to compare boolean values
+
 Algorithms
 4. What is an algorithm?
-
+    An algorithm is a set of steps to solve a problem or accomplish a task.
 5. What are two common categories of algorithm in computer science? 
-
+    Search, Sort, finding Shortest path
 Methods
 6. What is a method? Why might a programmer choose to use a method?
+    Methods are a way of creating and using reusable code.  A reason a programmer would use a method is because it can perform single functionalities and be combined in place of lengthy code
 
 7. Define the following terms as they relate to a method. 
 
-return value
-side effect
-parameter
-argument
-implicit return
+return value 
+    - In Ruby, every method returns the evaluated result of the last line that is executed. To explicitly return a value you can use the "return" keyword.
+
+side effect 
+    - using a method that returns nothing to determine what the side effect of that method
+
+parameter 
+    - a parameter is the name of variable a method is calling ex. def add(number1,number2)
+
+argument 
+    - the vaule being passed through the method when a method is called is that arugment ex. puts add (2,3)
+
+implicit return 
+    - is the result of the last line executed is not explicit reutrn is called 
+
 8. What are global scope and method scope? How do those scopes impact the availability of data at different points in a program?
+    - The scope of a global variable (variables outside a method) is that its are valid everywhere outside a method. The use of global variables should be limited in programs.
+    -  local variables created inside of a method (i.e. in between the defend end keywords of a method) 'fall out of scope' once you're outside the method.
 
 Control Flow
 9. What is control flow? Why might a programmer choose to use flow control?
+    -where a piece of code is used and how it's executed to effect surrounding code.  I use of control flow is to statisfy an argument for all coniditions
 
 10. Define the following terms as they relate to flow control.
 
-loop
-if
-else
-elsif
-while
-until
-Rubric
+loop - repeat code over and over again (recurisive or conditionally)
+if - states what the code will do if a certain conidtion is met
+else - what the code word do otherwise if condition not met
+elsif - what the code word other if first conidition not true but following condition is
+while - repeat while codition it true
+until - repeat while coniditon is false 
+

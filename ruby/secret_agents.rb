@@ -1,4 +1,7 @@
-#Create a method that
+#Create a method that gives an string.  
+#For each letter in that string, the following (or previous) letter is returned
+#Repeat until entire string condition is met
+#Return string
 
 def encrypt(str)
   i = 0

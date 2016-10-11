@@ -1,39 +1,46 @@
+#Create a method that
+
 def encrypt(str)
-  index = 0
+  i = 0
   encryptString = ""
-  while index < str.length
-    if str[index] == "z"
-      encryptString += "a"
-    else
-      encryptString += str[index].next
-    end
-    index += 1
+  while i < str.length
+    encryptString += letterAfter(str[i])
+    i += 1
   end
   return encryptString
 end 
 
+def letterAfter(letter)
+  if letter == "z"
+    nextLetter = "a"
+  else
+    nextLetter = letter.next
+  end  
+  return nextLetter
+end
+
 p encrypt("abc")
 p encrypt("zed")
-p encrypt("dez")
 
 
-=begin
 
 def decrypt(str)
-  index = 0
-  key = "abcdefghijklmnopqrstuvwxyz"
-  key.reverse!
-  puts key
-  while index < str.length
-    if key[index] = str[index]
-      str[index] = str[index].next
-    end
-    index += 1
+  i = 0
+  decryptString = ""
+  while i < str.length
+    decryptString += previousLetter(str[i])
+    i += 1
   end
-  p str
-end 
+    return decryptString
+end
 
-decrypt("bcd") #should return "abc"
-decrypt("afe") #should return "zed"
+def previousLetter(letter)
+  alphabet = "abcdefghijklmnopqrstuvwxyz".chars
+  letter = alphabet[alphabet.index(letter)-1]
+  return letter
+end
 
-=end
+p decrypt("bcd")
+p decrypt("afe")
+
+

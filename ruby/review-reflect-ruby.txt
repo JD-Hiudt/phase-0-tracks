@@ -1,0 +1,45 @@
+Variables
+1. What is a variable? Why might a programmer use a variable?
+
+    
+2. If the value of first_name is "Abraham" and last_name is "Lincoln", explain the order in which Ruby will run the line full_name = first_name + last_name, and what the final result will be.
+    
+
+
+Data Types
+3. For each of the following data types, write a short definition and give at least one example of when you might use the data type in a program. (Don't use an example we've already provided.)
+
+string
+integer
+float
+nil
+boolean
+Algorithms
+4. What is an algorithm?
+
+5. What are two common categories of algorithm in computer science? 
+
+Methods
+6. What is a method? Why might a programmer choose to use a method?
+
+7. Define the following terms as they relate to a method. 
+
+return value
+side effect
+parameter
+argument
+implicit return
+8. What are global scope and method scope? How do those scopes impact the availability of data at different points in a program?
+
+Control Flow
+9. What is control flow? Why might a programmer choose to use flow control?
+
+10. Define the following terms as they relate to flow control.
+
+loop
+if
+else
+elsif
+while
+until
+Rubric

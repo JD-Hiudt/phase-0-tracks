@@ -26,7 +26,6 @@ p encrypt("abc")
 p encrypt("zed")
 
 
-
 def decrypt(str)
   i = 0
   decryptString = ""
@@ -45,6 +44,35 @@ end
 
 p decrypt("bcd")
 p decrypt("afe")
+
+p decrypt(encrypt("swordfish")) 
+
+
+#ask user if they want to encrypt or decrypt
+#add condition if answer outside those options to repeat ask
+#get password from user
+#based on if they select encrypt or decrypt, run appropriate method with the password as the argument
+
+def crypticPassword
+  while true
+    puts "Do you want to encrypt or decrypt a password"
+    choice = gets.chomp.downcase 
+    if (choice == "encrypt" || choice == "decrypt")
+      puts "What is the password?"
+      password = gets.chomp 
+        if choice == "encrypt"
+          return encrypt(password)
+          break
+        else choice == "decrypt"
+          return decrypt(password) 
+        end 
+    else
+      puts "please enter 'encrypt' or 'decrypt'"
+    end
+  end
+end
+
+p crypticPassword
 
 
 

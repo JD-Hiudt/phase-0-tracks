@@ -6,10 +6,9 @@ clientInformation = {
   name: "",
   age: nil,
   num_of_children: nil,
-  decor_theme: decor = []
+  decor_theme: []
 }
 
-p clientInformation.keys
 puts "Please fill in the following information about your client"
 puts "name:"
 clientInformation[:name] = gets.chomp
@@ -20,11 +19,11 @@ clientInformation[:num_of_children] = gets.chomp.to_i
 puts "preferred decor theme(s):"
 while true
   puts "enter any decor themes the client is interested in (or type 'exit')"
-  decorPreference = gets.chomp
-  if decorPreference == 'exit'
+  input = gets.chomp
+  if input == 'exit'
     break
   else
-    decor << decorPreference
+    clientInformation[:decor_theme] << input
   end
 end
 p clientInformation

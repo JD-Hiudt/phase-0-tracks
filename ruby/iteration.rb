@@ -92,4 +92,4 @@ p numbers
 p numbers.select { |i, spelled| i < 5 }
 
 #A method that will remove items from a data structure until the condition in the block evaluates to false, then stops (you may not find a perfectly working option for the hash, and that's okay).
-words = ["cat", "dog", "horse", "rabbit", "hamster", "turtle", "frog"]
+words = ["cat", "dog", "horse", "rabbit", "hamster", "turtle", ""]

@@ -1,4 +1,4 @@
-=begin
+
 #my own method block
 def addExclamation
   puts "What's your name"
@@ -61,7 +61,7 @@ end
 
 puts "after .map"
 p grocery_list
-=end
+
 #A method that iterates through the items, deleting any that meet a certain condition 
 grades = ["A", "B", "C", "D", "F"]
 p grades

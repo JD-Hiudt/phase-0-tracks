@@ -1,3 +1,4 @@
+
 #my own method block
 def addExclamation
   puts "What's your name"
@@ -60,3 +61,35 @@ end
 
 puts "after .map"
 p grocery_list
+
+#A method that iterates through the items, deleting any that meet a certain condition 
+grades = ["A", "B", "C", "D", "F"]
+p grades
+grades.delete_if {|grade| grade > "C" }
+p grades
+
+grades = { "A+" => 100, "A" => 95, "A-" => 90, "B+" => 89, "B" => 85, "B-" => 80, "C+" => 79, "C" => 75, "C-" => 70 }
+p grades
+grades.delete_if { |grade, score|  score < 90} 
+p grades
+
+#A method that filters a data structure for only items that do satisfy a certain condition
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+p numbers
+p numbers.take_while { |i| i < 5 }
+
+numbers = { 1 => 'one', 2 => 'two', 3 => 'three', 4 => 'four', 5 => 'five', 6 => '6', 7 => 'seven', 8 => 'eight', 9 => 'nine', 10 => 'ten' }
+p numbers
+p numbers.take_while { |i, spelled| i < 5 }
+
+#A different method that filters a data structure for only items satisfying a certain condition -- Ruby offers several options!
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+p numbers
+p numbers.select { |i| i < 5 }
+
+numbers = { 1 => 'one', 2 => 'two', 3 => 'three', 4 => 'four', 5 => 'five', 6 => '6', 7 => 'seven', 8 => 'eight', 9 => 'nine', 10 => 'ten' }
+p numbers
+p numbers.select { |i, spelled| i < 5 }
+
+#A method that will remove items from a data structure until the condition in the block evaluates to false, then stops (you may not find a perfectly working option for the hash, and that's okay).
+words = ["cat", "dog", "horse", "rabbit", "hamster", "turtle", ""]

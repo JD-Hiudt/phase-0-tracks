@@ -52,6 +52,7 @@ apartment = {
 
 p apartment[:living_room][:furniture]
 p apartment[:living_room][:furniture].push('ottoman')
+p apartment[:living_room]
 p apartment[:bedroom][:furniture]
 p apartment[:bedroom][:furniture].shuffle
 p apartment[:bedroom]

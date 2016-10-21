@@ -34,7 +34,7 @@ p fib(100)[-1]
 #Continue while length of list greater than current index value
 #each time executed, add 1 to index 
 
-list = [41, 5, 7, 42, 5]
+list = [54,26,93,17,77,31,44,55,20]
 def bubble_sort(list)
 i = 0
   while i != list.length-1 

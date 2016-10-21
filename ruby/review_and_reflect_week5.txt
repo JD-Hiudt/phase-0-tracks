@@ -1,0 +1,40 @@
+Data Structures
+1. Why are data structures useful in programming?
+
+    data structures are useful in programming because they allow you to gather data, store that data in a meaningful way, and access data stored efficiently 
+
+Arrays
+2. Define "array" and describe the characteristics of an array.
+
+    Ruby arrays are ordered collections of elements.  each element in an array can be referred by the index position within that array.  index positions are integer-based and you can reference an element by calling the index position of the array.  Indexing begins at index[0], and elements can also be referenced using negative indexes
+
+3. Give two original examples of data sets that an array might be well-suited for.
+
+    A packing list, and a grocery list
+
+Hashes
+4. Define "hash" and describe the characteristics of a hash.
+
+    Hashes are an unordered collection of keys and values with are paired together (ex. 'name'=>'Jacob').  With a hash, the programmer can define the key and pair that key with specific values - those element/objects can then be referenced using the key-value, rather than an index.  Therefore there are no order to these lists like an array
+
+5. Give two original examples of data sets that a hash might be well-suited for.
+
+    gathering and storing information on people participating in a survey, and creating a catalog of dog breads based on size 
+
+Iteration
+6. Why is iteration useful?
+
+    Iteration methods are useful when you want to execute a code as many times as there are iterations
+
+7. Give an example of a real-life task that would require iteration if you wrote an algorithm for it.
+
+    A teacher taking attendance 
+
+Blocks
+8. What is a block?
+
+    there are 2 types of blocks, 'multi-line' - defined and placed between a do and end.  or 'inline' - placed between { and }
+
+9. What is a block parameter, and where does its value come from?
+
+    a block parameter is and is value is each value in turn in the order they are listed or called in an array.  A block parameter is unique, and can be arbitrarily assigned by the programmer

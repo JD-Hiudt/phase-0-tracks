@@ -88,7 +88,7 @@ end
 
 def print_data
   $alias_names.each do |real_name, fake_name|
-    puts "#{real_name} alias is #{fake_name}"
+    puts "#{real_name}'s alias is #{fake_name}"
   end
 end
 

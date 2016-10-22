@@ -1,14 +1,15 @@
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps: 
-  # 
+  # convert string to array
   # set default quantity
-  # print the list to the console [can you use one of your other methods here?]
-# output: [what data type goes here, array or hash?]
+  # iterate through each item in array, applying items as keys and quantity as value
+  # print the list to the console (reference print method)
+# output: hash - grocery items as keys, quantity of items as values
 
 # Method to add an item to a list
 # input: item name and optional quantity
-# steps:
+# steps: 
 # output:
 
 # Method to remove an item from the list
@@ -30,11 +31,18 @@ $grocery_list = {}
 
 def create_list(grocery_items)
   grocery_items = grocery_items.split(' ')
-  quantity = 1.to_s
+  quantity = 1
   grocery_items.each do |item|
     $grocery_list[item] = quantity
   end
+  add_item("lemonade", 2)
   print_data
+end
+
+def add_item(item, quantity)
+  add_grocery_item = {}
+  add_grocery_item[item] = quantity
+  $grocery_list.merge!(add_grocery_item)
 end
 
 def print_data

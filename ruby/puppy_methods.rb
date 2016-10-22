@@ -1,3 +1,5 @@
+=begin
+
 class Puppy
 
   def fetch(toy)
@@ -40,6 +42,28 @@ penny.roll_over
 penny.dog_years(4)
 
 penny.high_five
+
+=end
+
+class Football_Player
+
+  def pass
+    puts "I play offense"
+  end
+
+  def tackle
+    puts "I play defense"
+  end
+
+  def initialize
+    puts "Initializing new football player instance ..."
+  end 
+
+  instances = {}
+  loop do
+    instance = 1.new
+    
+end
 
 
 

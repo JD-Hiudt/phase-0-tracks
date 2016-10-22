@@ -36,6 +36,7 @@ def create_list(grocery_items)
     $grocery_list[item] = quantity
   end
   add_item("lemonade", 2)
+  remove_item("lemonade")
   print_data
 end
 
@@ -43,6 +44,10 @@ def add_item(item, quantity)
   add_grocery_item = {}
   add_grocery_item[item] = quantity
   $grocery_list.merge!(add_grocery_item)
+end
+
+def remove_item(item)
+  $grocery_list.delete(item)
 end
 
 def print_data

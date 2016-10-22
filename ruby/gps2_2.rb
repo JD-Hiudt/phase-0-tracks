@@ -35,19 +35,15 @@ def create_list(grocery_items)
   grocery_items.each do |item|
     $grocery_list[item] = quantity
   end
-  add_item("lemonade", 2)
+  add_item_update_quantity("lemonade", 2)
   remove_item("lemonade")
   print_data
 end
 
-def add_item(item, quantity)
-  add_grocery_item = {}
-  add_grocery_item[item] = quantity
-  $grocery_list.merge!(add_grocery_item)
-end
-
-def remove_item(item)
-  $grocery_list.delete(item)
+def add_item_update_quantity(item, quantity)
+  update_grocery_item = {}
+  update_grocery_item[item] = quantity
+  $grocery_list.merge!(update_grocery_item)
 end
 
 def print_data

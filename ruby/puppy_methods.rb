@@ -1,3 +1,5 @@
+=begin
+
 class Puppy
 
   def fetch(toy)
@@ -41,6 +43,39 @@ penny.dog_years(4)
 
 penny.high_five
 
+=end
+
+class FootballGame
+
+  def pass(quarterback,receiver,yards)
+    puts "#{quarterback} finds an open #{receiver} for a #{yards} yard play!"
+  end
+
+  def run(quarterback,running_back,yards)
+    puts "#{quarterback} hands the ball off to #{running_back}, who takes it for a #{yards} yard gain!"
+  end
+
+  def initialize
+    puts "Are you ready for some football?!"
+  end 
+
+  football_game = []
+
+  i = 0
+  until i >= 50
+    plays = FootballGame.new
+    i += 1
+    football_game.push(plays)
+  end
+
+
+  football_game.each do
+    FootballGame.new
+    plays.pass('Andy Dalton','AJ Green',50)
+    plays.run('Andy Dalton','Jeremy Hill',10)
+  end
+
+end
 
 
 

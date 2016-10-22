@@ -30,9 +30,17 @@ $grocery_list = {}
 
 def create_list(grocery_items)
   grocery_items = grocery_items.split(' ')
-  quantity = 1
-  grocery_items.each do |items|
-    $grocery_list[grocery_items] = quantity
+  quantity = 1.to_s
+  grocery_items.each do |item|
+    $grocery_list[item] = quantity
+  end
+  print_data
+end
+
+def print_data
+  $grocery_list.each do |item, quantity|
+    return $grocery_list
+  #puts "#{item}, qty: #{quantity}"
   end
 end
 

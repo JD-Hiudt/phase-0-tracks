@@ -25,3 +25,15 @@
 # input:
 # steps:
 # output:
+
+$grocery_list = {}
+
+def create_list(grocery_items)
+  grocery_items = grocery_items.split(' ')
+  quantity = 1
+  grocery_items.each do |items|
+    $grocery_list[grocery_items] = quantity
+  end
+end
+
+p create_list("carrots apples cereal pizza")

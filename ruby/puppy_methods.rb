@@ -45,26 +45,37 @@ penny.high_five
 
 =end
 
-class Football_Player
+class FootballGame
 
-  def pass
-    puts "I play offense"
+  def pass(quarterback,receiver,yards)
+    puts "#{quarterback} finds an open #{receiver} for a #{yards} yard play!"
   end
 
-  def tackle
-    puts "I play defense"
+  def run(quarterback,running_back,yards)
+    puts "#{quarterback} hands the ball off to #{running_back}, who takes it for a #{yards} yard gain!"
   end
 
   def initialize
-    puts "Initializing new football player instance ..."
+    puts "Are you ready for some football?!"
   end 
 
-  instances = {}
-  loop do
-    instance = 1.new
-    
-end
+  football_game = []
 
+  i = 0
+  until i >= 50
+    plays = FootballGame.new
+    i += 1
+    football_game.push(plays)
+  end
+
+
+  football_game.each do
+    FootballGame.new
+    plays.pass('Andy Dalton','AJ Green',50)
+    plays.run('Andy Dalton','Jeremy Hill',10)
+  end
+
+end
 
 
 

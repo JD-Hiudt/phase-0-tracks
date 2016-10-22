@@ -1,5 +1,3 @@
-=begin
-
 class Puppy
 
   def fetch(toy)
@@ -43,7 +41,6 @@ penny.dog_years(4)
 
 penny.high_five
 
-=end
 
 class FootballGame
 

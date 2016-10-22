@@ -9,23 +9,21 @@
 
 # Method to add an item to a list
 # input: item name and optional quantity
-# steps: 
-# output:
+# steps: create new hash of just item and quantity to add, merge with main hash/list
+# output: main hash/list now merged with new item listed
 
 # Method to remove an item from the list
-# input:
-# steps:
-# output:
+# input: name of item to be removed
+# steps: delete item (and associated quantity) from hash 
+# output: main hash sans deleted item
 
 # Method to update the quantity of an item
-# input:
-# steps:
-# output:
+# note: determined in refactoring that add item to list can also perform this function since adding an items 
 
 # Method to print a list and make it look pretty
-# input:
-# steps:
-# output:
+# input: list as hash
+# steps: iterate through list 
+# output: return each item and quantity as string
 
 $grocery_list = {}
 
@@ -48,17 +46,19 @@ def add_item_update_quantity(item, quantity)
   update_grocery_item = {}
   update_grocery_item[item] = quantity
   $grocery_list.merge!(update_grocery_item)
+  return $grocery_list
 end
 
 def remove_item(item)
   $grocery_list.delete(item)
+  return $grocery_list
 end
 
 def print_data
   $grocery_list.each do |item, quantity|
-    return $grocery_list
-  #puts "#{item}, qty: #{quantity}"
+    puts "#{item}, qty: #{quantity}"
   end
+  return $grocery_list
 end
 
-p create_list("carrots apples cereal pizza")
+create_list("carrots apples cereal pizza")

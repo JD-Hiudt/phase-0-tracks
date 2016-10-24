@@ -13,23 +13,36 @@
 #IF word guess before limit, print win message
 
 class WordGame
-  attr_accessor :user_guess
+  attr_accessor :user_guess, :user_guess_as_letters, :letters_guessed
   attr_reader :is_over
 
   def initialize(word_to_be_guessed)
     @word = word_to_be_guessed
     @word_as_letters = word_to_be_guessed.chars
+    @user_guess = ""
+    @letters_guessed = []
     @number_of_guesses = 0
     @is_over = false
-    @user_guess = ""
   end
 
   def game_word
     @word
   end
 
-  def word_as_letters
+  def word_as_array
     @word_as_letters
+  end
+
+  def user_word_guess
+    @user_guess = gets.chomp
+  end
+
+  def user_guess_as_array
+    @user_guess_as_letters = @user_guess.chars
+  end
+
+  def arr_of_guessed_letters
+    @letters_guessed << @user_guess_as_letters
   end
 
   def check_is_over

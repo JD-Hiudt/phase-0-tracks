@@ -12,8 +12,13 @@ describe WordGame do
   end
 
   it "breaks word down into letters, user input" do
-    word.user_word_guess = "joe"
+    word.user_guess = "joe"
     expect(word.user_guess_as_array).to eq ['j','o','e']
   end
 
+  it "adds letters guessed to array of guessed letters" do
+    word.user_guess_as_array = ['j','o','e']
+    word.user_guess_as_array = ['e','l','e','p','h','a','n','t']
+    expect(word.letters_guessed).to eq ['j','o','e','l','p','h','a','n','t']
+  end 
 end

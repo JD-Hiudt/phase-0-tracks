@@ -13,13 +13,15 @@
 #IF word guess before limit, print win message
 
 class WordGame
+  attr_accessor :user_guess
+  attr_reader :is_over
+
   def initialize(word_to_be_guessed)
     @word = word_to_be_guessed
-    @count = @word.length
+    @number_of_guesses = 0
     @is_over = false
     @user_guess = ""
     @letters_guessed = []
-
   end
 
   def game_word
@@ -31,13 +33,30 @@ class WordGame
   end
 
   def word_as_empty_spaces
-    @word.gsub(/[A-z]/, "_ ")
+    @word.gsub(/[A-z]/, "_")
   end
 
+  def check_is_over
+    @number_of_guesses += 1
+      if @number_of_guesses >= @word.length
+        @is_over = true
+        puts "out of guesses"
+      else
+        false
+      end
+  end
 end
 
 puts "Welcome to the Word Guessing Game"
+game = WordGame.new('joe')
 
+while !game.is_over
+  puts "Please guess a word, or letter"
+  game.user_guess = gets.chomp
+  if game.check_is_over == true
+    break
+  end
+end
 
 
 

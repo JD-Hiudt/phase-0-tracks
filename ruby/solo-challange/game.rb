@@ -18,10 +18,10 @@ class WordGame
 
   def initialize(word_to_be_guessed)
     @word = word_to_be_guessed
+    @word_as_letters = word_to_be_guessed.chars
     @number_of_guesses = 0
     @is_over = false
     @user_guess = ""
-    @letters_guessed = []
   end
 
   def game_word
@@ -29,11 +29,7 @@ class WordGame
   end
 
   def word_as_letters
-    @word = @word.chars
-  end
-
-  def word_as_empty_spaces
-    @word.gsub(/[A-z]/, "_")
+    @word_as_letters
   end
 
   def check_is_over
@@ -47,16 +43,20 @@ class WordGame
   end
 end
 
+=begin
 puts "Welcome to the Word Guessing Game"
 game = WordGame.new('joe')
 
 while !game.is_over
   puts "Please guess a word, or letter"
   game.user_guess = gets.chomp
+  game.letters_guessed << game.user_guess
   if game.check_is_over == true
     break
   end
 end
+=end
+
 
 
 

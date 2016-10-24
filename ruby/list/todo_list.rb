@@ -7,6 +7,10 @@ class TodoList
     @list
   end
 
+  def add_item(item_to_add)
+    @list.push(item_to_add)
+  end
+
 end
 
 TodoList.new(["do the dishes","mow the lawn"])

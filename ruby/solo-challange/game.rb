@@ -15,6 +15,11 @@
 class WordGame
   def initialize(word_to_be_guessed)
     @word = word_to_be_guessed
+    @count = @word.length
+    @is_over = false
+    @user_guess = ""
+    @letters_guessed = []
+
   end
 
   def game_word
@@ -24,4 +29,15 @@ class WordGame
   def word_as_letters
     @word = @word.chars
   end
+
+  def word_as_empty_spaces
+    @word.gsub(/[A-z]/, "_ ")
+  end
+
 end
+
+puts "Welcome to the Word Guessing Game"
+
+
+
+

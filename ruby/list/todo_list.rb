@@ -14,6 +14,10 @@ class TodoList
   def delete_item(item_to_delete)
     @list.delete(item_to_delete)
   end
+
+  def get_item
+    @list[index]
+  end
 end
 
 TodoList.new(["do the dishes","mow the lawn"])

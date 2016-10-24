@@ -12,3 +12,16 @@
 #IF count limit reached, print lose message
 #IF word guess before limit, print win message
 
+class WordGame
+  def initialize(word_to_be_guessed)
+    @word = word_to_be_guessed
+  end
+
+  def game_word
+    @word
+  end
+
+  def word_as_letters
+    @word = @word.chars
+  end
+end

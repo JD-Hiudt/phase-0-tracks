@@ -15,6 +15,7 @@
 #LOGIC
 
 class HangmanGame
+
   attr_reader :game_word, :is_over
   attr_accessor :guessed_word
 
@@ -26,17 +27,6 @@ class HangmanGame
     @guessed_letters = []
   end
 
-  def break_down_word(users_guess)
-    game_word_as_arr = @game_word.chars
-    counter = 0
-    while counter < game_word_as_arr.length
-      if users_guess == game_word_as_arr[counter]
-        @guessed_word[counter] = game_word_as_arr[counter]
-      end
-      counter += 1
-    end
-  end
-
   def guess_letter(users_guess)
     break_down_word(users_guess)
     puts progress_of_word
@@ -45,18 +35,14 @@ class HangmanGame
     check_guesses
   end
 
-  def is_solved?
-    if @game_word == @guessed_word.join('')
-      @is_over = true
-      puts "Congratulations!"
-    end
-  end
-
-  def check_guesses
-    if @guess_count == 0
-      @is_over = true
-      puts "you ran out of guesses..."
-      puts "Game Over"
+  def break_down_word(users_guess)
+    game_word_as_arr = @game_word.chars
+    counter = 0
+    while counter < game_word_as_arr.length
+      if users_guess.include?(game_word_as_arr.join('')[counter])
+        @guessed_word[counter] = game_word_as_arr[counter]
+      end
+      counter += 1
     end
   end
 
@@ -68,12 +54,26 @@ class HangmanGame
     if !@guessed_letters.include?(users_guess)
       @guessed_letters.push(users_guess)
       @guess_count -= 1
-      puts "#{@guess_count} guesses remaining"
+      puts "#{@guess_count} guesses remaining..."
     else
-      puts "You already guessed this letter"
+      puts "...letter(s) already guessed"
     end
   end
 
+  def is_solved?
+    if @game_word == @guessed_word.join('')
+      @is_over = true
+      puts "Congratulations! The word was #{@game_word}! You're a genius!"
+    end
+  end
+
+  def check_guesses
+    if @guess_count == 0
+      @is_over = true
+      puts "you ran out of guesses..."
+      puts "Game Over"
+    end
+  end
 end
 
 
@@ -82,7 +82,7 @@ puts "Welcome to Hangman!"
 hangman = HangmanGame.new('elephant')
 
 while !hangman.is_over
-  puts "Guess a letter"
+  puts "Guess a word or letter"
   guess = gets.chomp
   hangman.guess_letter(guess)
 end

@@ -21,7 +21,7 @@ class HangmanGame
 
   def initialize(word_to_be_guessed)
     @game_word = word_to_be_guessed
-    @guessed_word = Array.new(word_to_be_guessed.length, " _ ") 
+    @guessed_word = Array.new(word_to_be_guessed.length, "_ ") 
     @guess_count = word_to_be_guessed.length
     @is_over = false
     @guessed_letters = []
@@ -54,7 +54,11 @@ class HangmanGame
     if !@guessed_letters.include?(users_guess)
       @guessed_letters.push(users_guess)
       @guess_count -= 1
-      puts "#{@guess_count} guesses remaining"
+      if @guess_count <= 0
+        @is_over
+      else
+        puts "#{@guess_count} guesses remaining"
+      end
     else
       puts "...letter(s) already guessed"
     end
@@ -63,6 +67,7 @@ class HangmanGame
   def is_solved?
     if @game_word == @guessed_word.join('')
       @is_over = true
+      @guess_count = 0
       puts "Congratulations! The word was #{@game_word}! You're a genius!"
     end
   end
@@ -70,20 +75,19 @@ class HangmanGame
   def check_guesses
     if @guess_count == 0
       @is_over = true
-      puts "you ran out of guesses..."
-      puts "Game Over"
     end
   end
 end
 
 
 #USER INTERFACE
+
 puts "Welcome to Hangman!"
 hangman = HangmanGame.new('elephant')
 
 while !hangman.is_over
   puts "Guess a word or letter"
-  guess = gets.chomp
+  guess = gets.chomp.downcase
   hangman.guess_letter(guess)
 end
 

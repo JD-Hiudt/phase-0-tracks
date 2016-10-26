@@ -12,6 +12,68 @@
 #IF count limit reached, print lose message
 #IF word guess before limit, print win message
 
+#LOGIC
+
+class HangmanGame
+  attr_reader :guessed_word, :game_word
+
+  def initialize(word_to_be_guessed)
+    @game_word = word_to_be_guessed
+    @guessed_word = Array.new(word_to_be_guessed.length, "_") 
+    @guess_count = word_to_be_guessed.length * 2
+    @is_over = false
+  end
+
+  def guess_letter(users_guess)
+    game_word_as_arr = @game_word.chars
+    counter = 0
+    while counter < game_word_as_arr.length
+      if user_guess == game_word_as_arr[counter]
+        @guessed_word[counter] = game_word_as_arr[counter]
+      end
+      counter += 1
+    end
+    @guessed_word.join('')
+    is_solved?
+    @guess_count -= 1
+    check_guesses
+  end
+
+  def is_solved?
+    if @game_word == @guessed_word.join('')
+      @is_over = true
+    end
+  end
+
+  def check_guesses
+    if @guess_count == 0
+      @is_over = true
+    end
+  end
+
+end
+
+
+#USER INTERFACE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=begin
 class WordGame
   attr_accessor :user_guess, :user_guess_as_letters, :letters_guessed
   attr_reader :is_over
@@ -56,7 +118,7 @@ class WordGame
   end
 end
 
-=begin
+
 puts "Welcome to the Word Guessing Game"
 game = WordGame.new('joe')
 

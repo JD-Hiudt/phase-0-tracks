@@ -76,7 +76,7 @@ class HangmanGame
 
 end
 
-=begin
+
 #USER INTERFACE
 puts "Welcome to Hangman!"
 hangman = HangmanGame.new('elephant')
@@ -86,7 +86,7 @@ while !hangman.is_over
   guess = gets.chomp
   hangman.guess_letter(guess)
 end
-=end
+
 
 
 

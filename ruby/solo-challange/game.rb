@@ -54,7 +54,7 @@ class HangmanGame
     if !@guessed_letters.include?(users_guess)
       @guessed_letters.push(users_guess)
       @guess_count -= 1
-      puts "#{@guess_count} guesses remaining..."
+      puts "#{@guess_count} guesses remaining"
     else
       puts "...letter(s) already guessed"
     end

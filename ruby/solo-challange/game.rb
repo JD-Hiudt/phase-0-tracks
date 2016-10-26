@@ -8,7 +8,7 @@
   #ELSE print blank space (_)
 #IF user word not equal to first work, repeat from line 3
 #Until count of user guesses equals the length of the original word(argument), countinue to run game
-#IF a word was already guessed, nothing is added to the count of guesses
+#IF a letter was already guessed, nothing is added to the count of guesses
 #IF count limit reached, print lose message
 #IF word guess before limit, print win message
 
@@ -76,7 +76,7 @@ class HangmanGame
 
 end
 
-
+=begin
 #USER INTERFACE
 puts "Welcome to Hangman!"
 hangman = HangmanGame.new('elephant')
@@ -86,7 +86,7 @@ while !hangman.is_over
   guess = gets.chomp
   hangman.guess_letter(guess)
 end
-
+=end
 
 
 

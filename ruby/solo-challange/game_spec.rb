@@ -8,6 +8,7 @@ describe HangmanGame do
   end
 
   it "shows the word to be guessed as dashes" do
-    expect(word.guessed_word).to eq ('_ _ _ _ _ ')
+    expect(word.guessed_word).to eq ([' _ ', ' _ ', ' _ ', ' _ ', ' _ '])
   end
+
 end

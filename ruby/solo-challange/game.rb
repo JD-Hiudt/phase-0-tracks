@@ -15,7 +15,7 @@
 #LOGIC
 
 class HangmanGame
-  attr_reader :guessed_word, :game_word
+  attr_reader :guessed_word, :game_word, :is_over
 
   def initialize(word_to_be_guessed)
     @game_word = word_to_be_guessed
@@ -28,7 +28,7 @@ class HangmanGame
     game_word_as_arr = @game_word.chars
     counter = 0
     while counter < game_word_as_arr.length
-      if user_guess == game_word_as_arr[counter]
+      if users_guess == game_word_as_arr[counter]
         @guessed_word[counter] = game_word_as_arr[counter]
       end
       counter += 1
@@ -42,12 +42,14 @@ class HangmanGame
   def is_solved?
     if @game_word == @guessed_word.join('')
       @is_over = true
+      puts "congrats"
     end
   end
 
   def check_guesses
     if @guess_count == 0
       @is_over = true
+      puts "you ran out of guesses"
     end
   end
 
@@ -55,7 +57,14 @@ end
 
 
 #USER INTERFACE
+puts "Welcome to Hangman!"
+hangman = HangmanGame.new('elephant')
 
+while !hangman.is_over
+  puts "Guess a letter"
+  guess = gets.chomp
+  hangman.guess_letter(guess)
+end
 
 
 

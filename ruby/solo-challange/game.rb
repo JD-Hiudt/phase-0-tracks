@@ -1,6 +1,6 @@
 #Game takes a word as an argument
   #Break word down into individual letters
-#Game will ask for user input to guess the word(argument)
+#Game will ask for user input to guess a letter
   #Establish count of user guesses
   #Break user word down into individual letters
   #Compare letters of user word to word(argument)
@@ -15,16 +15,18 @@
 #LOGIC
 
 class HangmanGame
-  attr_reader :guessed_word, :game_word, :is_over
+  attr_reader :game_word, :is_over
+  attr_accessor :guessed_word
 
   def initialize(word_to_be_guessed)
     @game_word = word_to_be_guessed
-    @guessed_word = Array.new(word_to_be_guessed.length, "_") 
-    @guess_count = word_to_be_guessed.length * 2
+    @guessed_word = Array.new(word_to_be_guessed.length, " _ ") 
+    @guess_count = word_to_be_guessed.length
     @is_over = false
+    @guessed_letters = []
   end
 
-  def guess_letter(users_guess)
+  def break_down_word(users_guess)
     game_word_as_arr = @game_word.chars
     counter = 0
     while counter < game_word_as_arr.length
@@ -33,23 +35,42 @@ class HangmanGame
       end
       counter += 1
     end
-    @guessed_word.join('')
+  end
+
+  def guess_letter(users_guess)
+    break_down_word(users_guess)
+    puts progress_of_word
     is_solved?
-    @guess_count -= 1
+    already_guessed(users_guess)
     check_guesses
   end
 
   def is_solved?
     if @game_word == @guessed_word.join('')
       @is_over = true
-      puts "congrats"
+      puts "Congratulations!"
     end
   end
 
   def check_guesses
     if @guess_count == 0
       @is_over = true
-      puts "you ran out of guesses"
+      puts "you ran out of guesses..."
+      puts "Game Over"
+    end
+  end
+
+  def progress_of_word
+    return @guessed_word.join('')
+  end
+
+  def already_guessed(users_guess)
+    if !@guessed_letters.include?(users_guess)
+      @guessed_letters.push(users_guess)
+      @guess_count -= 1
+      puts "#{@guess_count} guesses remaining"
+    else
+      puts "You already guessed this letter"
     end
   end
 
@@ -76,70 +97,6 @@ end
 
 
 
-
-
-
-
-
-
-=begin
-class WordGame
-  attr_accessor :user_guess, :user_guess_as_letters, :letters_guessed
-  attr_reader :is_over
-
-  def initialize(word_to_be_guessed)
-    @word = word_to_be_guessed
-    @word_as_letters = word_to_be_guessed.chars
-    @user_guess = ""
-    @letters_guessed = []
-    @number_of_guesses = 0
-    @is_over = false
-  end
-
-  def game_word
-    @word
-  end
-
-  def word_as_array
-    @word_as_letters
-  end
-
-  def user_word_guess
-    @user_guess = gets.chomp
-  end
-
-  def user_guess_as_array
-    @user_guess_as_letters = @user_guess.chars
-  end
-
-  def arr_of_guessed_letters
-    @letters_guessed << @user_guess_as_letters
-  end
-
-  def check_is_over
-    @number_of_guesses += 1
-      if @number_of_guesses >= @word.length
-        @is_over = true
-        puts "out of guesses"
-      else
-        false
-      end
-  end
-end
-
-
-puts "Welcome to the Word Guessing Game"
-game = WordGame.new('joe')
-
-while !game.is_over
-  puts "Please guess a word, or letter"
-  game.user_guess = gets.chomp
-  game.letters_guessed << game.user_guess
-  if game.check_is_over == true
-    break
-  end
-end
-=end
 
 
 

@@ -10,20 +10,22 @@ require_relative 'state_data'
 
 class VirusPredictor
 
+  # Initialize method, taking 3 parameters, each parameter initialized to becomes value of instance variable
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  # run the two methods notated below
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
-
-  def predicted_deaths(population_density, population, state)
+  # takes a range of population densities and returns the number of deaths based on that range
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -37,11 +39,22 @@ class VirusPredictor
       number_of_deaths = (@population * 0.05).floor
     end
 
+    case @population_density
+    when @population_density >= 200
+      number_of_deaths = (@population * 0.4).floor
+    when @population_density (150...200)
+      number_of_deaths = (@population * 0.3).floor
+    when @population_density (100...150)
+      number_of_deaths = (@population * 0.2).floor
+      
+    end
+
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+  # takes population density range and state and adds speed based on that range
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -69,6 +82,18 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+STATE_DATA.each do |all_states, population_data|
+  each_state = VirusPredictor.new(all_states, population_data[:population_density], population_data[:population])
+  each_state.virus_effects
+end
+
+=begin
+ STATE_DATA.each_key do |all_states|
+  each_state = VirusPredictor.new(all_states, STATE_DATA[all_states][:population_density],STATE_DATA[all_states][:population])
+  each_state.virus_effects
+ end
+
+
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
@@ -81,7 +106,7 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
-
+=end
 
 #=======================================================================
 # Reflection Section

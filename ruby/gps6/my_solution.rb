@@ -24,23 +24,16 @@ class VirusPredictor
     speed_of_spread
   end
 
- # private
+  private
   # takes a range of population densities and returns the number of deaths based on that range
   def predicted_deaths
 
-    i = 0
-
     case @population_density 
-      when 0...50 
-        i = 0.05 
-      when 50...100 
-        i = 0.1
-      when 100...150 
-        i = 0.2
-      when 150...200 
-        i = 0.3
-      else 
-        i = 0.4
+      when 0...50 then i = 0.05 
+      when 50...100 then i = 0.1
+      when 100...150 then i = 0.2
+      when 150...200 then i = 0.3
+      else i = 0.4
     end
 
     number_of_deaths = (@population * i).floor
@@ -49,27 +42,17 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
   end
 
-
-
-
-
   # takes population density range and state and adds speed based on that range
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
 
     case @population_density 
-      when 0...50 
-        speed += 2.5 
-      when 50...100 
-        speed += 2
-      when 100...150 
-        speed += 1.5
-      when 150...200 
-        speed += 1
-      else 
-        speed += 0.5
+      when 0...50 then speed = 2.5 
+      when 50...100 then speed = 2
+      when 100...150 then speed = 1.5
+      when 150...200 then speed = 1
+      else speed = 0.5
     end
 
     puts " and will spread across the state in #{speed} months.\n\n"

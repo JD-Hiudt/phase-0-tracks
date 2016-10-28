@@ -9,6 +9,7 @@
 require_relative 'state_data'
 
 class VirusPredictor
+  attr_accessor :population_density, :population
 
   # Initialize method, taking 3 parameters, each parameter initialized to becomes value of instance variable
   def initialize(state_of_origin, population_density, population)
@@ -23,35 +24,34 @@ class VirusPredictor
     speed_of_spread
   end
 
-  private
+ # private
   # takes a range of population densities and returns the number of deaths based on that range
   def predicted_deaths
-    # predicted deaths is solely based on population density
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else
-      number_of_deaths = (@population * 0.05).floor
+
+    i = 0
+
+    case @population_density 
+      when 0...50 
+        i = 0.05 
+      when 50...100 
+        i = 0.1
+      when 100...150 
+        i = 0.2
+      when 150...200 
+        i = 0.3
+      else 
+        i = 0.4
     end
 
-    case @population_density
-    when @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    when @population_density (150...200)
-      number_of_deaths = (@population * 0.3).floor
-    when @population_density (100...150)
-      number_of_deaths = (@population * 0.2).floor
-      
-    end
+    number_of_deaths = (@population * i).floor
 
+   
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-
   end
+
+
+
+
 
   # takes population density range and state and adds speed based on that range
   def speed_of_spread #in months
@@ -59,16 +59,17 @@ class VirusPredictor
     # by additional factors we haven't added into this functionality.
     speed = 0.0
 
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
-    else
-      speed += 2.5
+    case @population_density 
+      when 0...50 
+        speed += 2.5 
+      when 50...100 
+        speed += 2
+      when 100...150 
+        speed += 1.5
+      when 150...200 
+        speed += 1
+      else 
+        speed += 0.5
     end
 
     puts " and will spread across the state in #{speed} months.\n\n"
@@ -86,7 +87,6 @@ STATE_DATA.each do |all_states, population_data|
   each_state = VirusPredictor.new(all_states, population_data[:population_density], population_data[:population])
   each_state.virus_effects
 end
-
 =begin
  STATE_DATA.each_key do |all_states|
   each_state = VirusPredictor.new(all_states, STATE_DATA[all_states][:population_density],STATE_DATA[all_states][:population])

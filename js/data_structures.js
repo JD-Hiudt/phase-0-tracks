@@ -6,3 +6,11 @@ colors.push("Eggplant");
 
 console.log(horseNames);
 console.log(colors);
+
+var listOfHorses = [];
+
+for (i = 0; i < horseNames.length; i+=1) {
+  listOfHorses[i] = {name: horseNames[i], color: colors[i] };
+}
+
+console.log(listOfHorses)

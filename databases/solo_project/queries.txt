@@ -1,0 +1,70 @@
+Run a SQL query for each of the following:
+
+* Display the information in one table (either table is fine).
+
+    command:
+    sqlite> SELECT * FROM restaurants;
+
+    output:
+    1|Viaggio Ristorante & Lounge|4|2008|1
+    2|Volare Ristorante Italiano|4|1995|1
+    3|Perennial Virant|4|2005|2
+    4|The Vig Chicago|4|2016|3
+    5|Gilt Bar|4|2010|4
+    6|Blue Door Kitchen & Garden|3|2015|3
+    7|Uncle Julio's Chicago|3|2010|5
+    8|Velvet Taco|4|2015|5
+
+
+* Update an item that meets some condition (you can choose a condition that makes sense).
+
+    command:
+    UPDATE categories SET category = "American (Traditional)" WHERE category = "American Traditional";
+
+    no output (can check update by running <SELECT * FROM categories>)
+
+* Display the information in both tables using one query.
+
+    command:
+    sqlite> SELECT * FROM restaurants, categories WHERE restaurants.category_id = categories.id;
+
+    output:
+    1|Viaggio Ristorante & Lounge|4|2008|1|1|Italian
+    2|Volare Ristorante Italiano|4|1995|1|1|Italian
+    3|Perennial Virant|4|2005|2|2|French
+    4|The Vig Chicago|4|2016|3|3|American (Traditional)
+    5|Gilt Bar|4|2010|4|4|American (New)
+    6|Blue Door Kitchen & Garden|3|2015|3|3|American (Traditional)
+    7|Uncle Julio's Chicago|3|2010|5|5|Mexican
+    8|Velvet Taco|4|2015|5|5|Mexican
+
+* Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+    command:
+    SELECT restaurants.name, categories.category FROM restaurants JOIN categories ON restaurants.category_id = categories.id;
+
+    output:
+    Viaggio Ristorante & Lounge|Italian
+    Volare Ristorante Italiano|Italian
+    Perennial Virant|French
+    The Vig Chicago|American (Traditional)
+    Gilt Bar|American (New)
+    Blue Door Kitchen & Garden|American (Traditional)
+    Uncle Julio's Chicago|Mexican
+    Velvet Taco|Mexican
+
+
+* Delete an item that meets some condition (you can choose a condition that makes sense).
+    
+    command:
+    sqlite> DELETE FROM restaurants WHERE star_rating = 3;
+
+
+    no output (can check update by running <SELECT * FROM restaurants;>)
+        1|Viaggio Ristorante & Lounge|4|2008|1
+        2|Volare Ristorante Italiano|4|1995|1
+        3|Perennial Virant|4|2005|2
+        4|The Vig Chicago|4|2016|3
+        5|Gilt Bar|4|2010|4
+        8|Velvet Taco|4|2015|5  
+            (**note, 2 items deleted but each item keeps original primary key**)

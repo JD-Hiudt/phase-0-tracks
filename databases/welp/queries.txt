@@ -1,0 +1,36 @@
+You've joined two tables before. How do you join three?
+    command:
+    SELECT * FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id;
+
+    output:
+    1|3|It's was okay|2|5|5|Holly|Berry|2|Amir's Towing
+    2|5|It's was great!|5|2|2|Mandy|Kaling|5|Plumbing by Janet
+    3|1|It's was terrible!|1|3|3|Angela|Jolie|1|Grundy Hollow Wedding Chapel
+    4|2|It's was alright|2|4|4|Steven|Wonder|2|Amir's Towing
+    5|3|It's was decent|4|1|1|Bradford|Pitt|4|Lotus Yoga
+    6|4|It's was cool|7|6|6|Merryl|Streepman|7|JoeBob's Sportz Barn
+    7|3|It's was cool|6|7|7|Denzel|George|6|Sushi World
+    8|5|It's was nice|5|5|5|Holly|Berry|5|Plumbing by Janet
+    9|5|It's was the best|3|6|6|Merryl|Streepman|3|The Beagle Night Club
+
+There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+    SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment
+   ...> FROM reviews
+   ...> JOIN users ON reviews.user_id = users.id
+   ...> JOIN businesses ON reviews.business_id = businesses.id;
+
+    Holly|Berry|Amir's Towing|3|It's was okay
+    Mandy|Kaling|Plumbing by Janet|5|It's was great!
+    Angela|Jolie|Grundy Hollow Wedding Chapel|1|It's was terrible!
+    Steven|Wonder|Amir's Towing|2|It's was alright
+    Bradford|Pitt|Lotus Yoga|3|It's was decent
+    Merryl|Streepman|JoeBob's Sportz Barn|4|It's was cool
+    Denzel|George|Sushi World|3|It's was cool
+    Holly|Berry|Plumbing by Janet|5|It's was nice
+    Merryl|Streepman|The Beagle Night Club|5|It's was the best
+
+How do you view the data of all three tables for just one particular business? 
+    SELECT * FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id WHERE businesses.name = "Plumbing by Janet";
+    
+    2|5|It's was great!|5|2|2|Mandy|Kaling|5|Plumbing by Janet
+    8|5|It's was nice|5|5|5|Holly|Berry|5|Plumbing by Janet

@@ -9,20 +9,22 @@ require 'faker'
 db = SQLite3::Database.new("contacts.db")
 
 # create a contact list table 
-create_contact_list = <<-SQL
+contact_list = <<-SQL
   CREATE TABLE IF NOT EXISTS contacts (
     id INTEGER PRIMARY KEY,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
-    birth_date date,
-  )
+    birth_date date
+  );
 SQL
 
-db.execute(create_contact_list)
+db.execute(contact_list)
 # LOGIC
 
 # Add Contact
-
+def create_contact(db, first_name, last_name, birth_date)
+  db.execute("INSERT INTO contacts (first_name, last_name, birth_date) VALUES (?, ?, ?)", [first_name, last_name, birth_date])
+end
 # View Contacts by First Name
 
 # View Contacts by Last Name
@@ -31,4 +33,10 @@ db.execute(create_contact_list)
 
 # USER INTERFACE
 
-# TEST (create list of 20 fake contacts)
+# TEST 
+
+#db.execute("INSERT INTO contacts (first_name, last_name, birth_date) VALUES ('Bob', 'Jones', 10/10/1990)")
+
+20.times do |contact|
+  create_contact(db, Faker::Name.first_name, Faker::Name.last_name, 0)
+end

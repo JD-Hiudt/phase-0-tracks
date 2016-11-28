@@ -91,9 +91,9 @@ end
 
 def case_1
   puts "What type of event would you like to add? (ex. 'Birthday', 'Anniversary')"
-  event_type = gets.chomp
+  event_type = gets.chomp.capitalized
   puts "Who is celebrating this special occasion? (ex. 'John Smith', 'Adam & Eve Jones')"
-  people = gets.chomp
+  people = gets.chomp.capitalized
   puts "What date is this occasion celebrated? (ex. 12/25)"
   date_celebrated = gets.chomp
   puts "How many years has this occasion been celebrated? (ex. '25')"

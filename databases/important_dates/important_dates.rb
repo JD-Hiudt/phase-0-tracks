@@ -94,11 +94,13 @@ loop do
     new_info = gets.chomp
     update_entry(db, column, new_info, column_id = 'id', id)
   elsif action == '3'
-    
+    puts "Using the number identifier, which entry would you like to update?"
+    view(db)
+    id = gets.chomp
+    remove_date(db, column = 'id', id)
   elsif action == '4'
     view_dates_by_date(db)
   end
-
 end
 
 #TEST LOGIC

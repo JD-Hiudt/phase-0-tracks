@@ -2,22 +2,25 @@
 require 'sqlite3'
 
 # create SQLite3 database
-db = SQLite3::Database.new("dates_events.db")
-db.results_as_hash = true
-
+def db
+  db = SQLite3::Database.new("dates_events.db")
+  db.results_as_hash = true
+  db
+end
 # create a important dates table
-create_important_dates = <<-SQL
-  CREATE TABLE IF NOT EXISTS important_dates_table (
-    id INTEGER PRIMARY KEY,
-    event_type VARCHAR(255),
-    people VARCHAR(255),
-    date_celebrated VARCHAR(255),
-    years_celebrated VARCHAR(255)
-  );
-SQL
+def table
+  create_important_dates = <<-SQL
+    CREATE TABLE IF NOT EXISTS important_dates_table (
+      id INTEGER PRIMARY KEY,
+      event_type VARCHAR(255),
+      people VARCHAR(255),
+      date_celebrated VARCHAR(255),
+      years_celebrated VARCHAR(255)
+    );
+  SQL
 
-db.execute(create_important_dates)
-
+  db.execute(create_important_dates)
+end
 # LOGIC
 
 # add important date
@@ -54,9 +57,10 @@ def view(db)
   end
 end
 # USER INTERFACE
-def run(db, event_type, people, date_celebrated, years_celebrated, column, new_info, column_id, id)
-  exit_program = false
-  until exit_program
+def run
+  db
+  table
+  until exit_prog
     user_message
     action = gets.chomp
     case action
@@ -91,9 +95,9 @@ end
 
 def case_1
   puts "What type of event would you like to add? (ex. 'Birthday', 'Anniversary')"
-  event_type = gets.chomp.capitalized
+  event_type = gets.chomp.capitalize
   puts "Who is celebrating this special occasion? (ex. 'John Smith', 'Adam & Eve Jones')"
-  people = gets.chomp.capitalized
+  people = gets.chomp.capitalize
   puts "What date is this occasion celebrated? (ex. 12/25)"
   date_celebrated = gets.chomp
   puts "How many years has this occasion been celebrated? (ex. '25')"
@@ -130,11 +134,11 @@ def case_4
 end
 
 def exit_prog
-  exit_program = true
+  exit_program = false
 end
 
 
-run(db)
+run
 
 
 

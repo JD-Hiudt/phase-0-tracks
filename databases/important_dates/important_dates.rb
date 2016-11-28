@@ -79,6 +79,22 @@ loop do
     puts "Using the number identifier, which entry would you like to update?"
     view(db)
     id = gets.chomp
+    puts "Which of the following would you like to update: Name, Date, Event Type, Years Celebrated?"
+    input = gets.chomp.downcase
+      if input == 'name'
+        column = 'people'
+      elsif input == 'date'
+        column = 'date_celebrated'
+      elsif input == 'event type'
+        column = 'event_type'
+      elsif input == 'years celebrated'
+        column = 'years_celebrated'
+      end
+    puts "Please update the #{input} now"
+    new_info = gets.chomp
+    update_entry(db, column, new_info, column_id = 'id', id)
+  elsif action == '3'
+    
   elsif action == '4'
     view_dates_by_date(db)
   end

@@ -38,6 +38,7 @@ end
 # view dates by type
 def view_dates_by_date(db)
   view = db.execute("SELECT * FROM important_dates_table ORDER BY date_celebrated, event_type ASC")
+  puts "----------"
   view.each do |event|
     puts "#{event['date_celebrated']}"
     puts "#{event['people']} - #{event['event_type']} (#{event['years_celebrated']} years)"
@@ -102,6 +103,8 @@ loop do
     view_dates_by_date(db)
   end
 end
+
+puts "Thank you for using my program"
 
 #TEST LOGIC
 #add_date(db, 'Birthday', 'Jacob Hiudt', '2/22', '26')

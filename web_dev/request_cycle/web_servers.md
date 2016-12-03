@@ -23,3 +23,21 @@ what are the advantages of using a VPS?
 - cheaper
 - scalable 
 - more control
+
+DOM properties
+    element.lastChild 
+    - Returns the last child node of an element
+
+    element.scrollTop 
+    - Sets or returns the number of pixels an element's content is scrolled vertically
+
+    element.compareDocumentPosition() 
+    - Compares the document position of two elements
+
+    element.setAttribute() 
+    - Sets or changes the specified attribute, to the specified value
+
+    element.nodeValue 
+    - Sets or returns the value of a node
+
+
